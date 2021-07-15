@@ -56,14 +56,19 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\MoveForward.cs" />
-    <Compile Include="Assets\Scripts\DestroyOutOfBound.cs" />
-    <Compile Include="Assets\Scripts\SpawnManager.cs" />
-    <Compile Include="Assets\Scripts\DetectCollisions.cs" />
+    <Compile Include="Assets\Prototype2\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Prototype2\Scripts\DestroyOutOfBound.cs" />
+    <Compile Include="Assets\Prototype2\Scripts\MoveForward.cs" />
+    <Compile Include="Assets\Prototype2\Scripts\SpawnManager.cs" />
+    <Compile Include="Assets\Prototype2\Scripts\DetectCollisions.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\PlayerControllerX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\DestroyOutOfBoundsX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\DetectCollisionsX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\MoveForwardX.cs" />
+    <Compile Include="Assets\Challenge 2\Scripts\SpawnManagerX.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
+     <None Include="Assets\Prototype2\Course Library\_Source_Files\_LICENSE.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
