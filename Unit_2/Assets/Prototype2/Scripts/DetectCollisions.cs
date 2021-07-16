@@ -16,7 +16,15 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        Destroy(other.gameObject);
+        if (gameObject.layer != other.gameObject.layer)
+        {
+            Destroy(gameObject);
+            if (other.gameObject.layer != 3)
+            {
+                Destroy(other.gameObject);
+                GameManager.Score += 1;
+                Debug.Log("Score: " + GameManager.Score);
+            }
+        }
     }
 }

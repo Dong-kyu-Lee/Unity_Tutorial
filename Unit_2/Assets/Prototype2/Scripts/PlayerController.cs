@@ -48,4 +48,20 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer == 6)
+        {
+            if (GameManager.Live > 1)
+            {
+                GameManager.Live -= 1;
+                Debug.Log("Live: " + GameManager.Live);
+            }
+            else { 
+                GameManager.Live = 0;
+                Debug.Log("Game Over!");
+            }
+        }
+    }
 }
