@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0851ed107c961bf4db7321f6163f43bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 2742661310028482092}
+  obstaclePrefab: {fileID: 7911227102036420802, guid: c70b5f0d8ee2baf4d88eeda1383b41d3, type: 3}
 --- !u!4 &31829399
 Transform:
   m_ObjectHideFlags: 0
@@ -616,13 +616,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1380216262, guid: 2f8d00bf5057f624e949aef802595da9, type: 3}
+      propertyPath: jumpForce
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380216262, guid: 2f8d00bf5057f624e949aef802595da9, type: 3}
+      propertyPath: gravityModifier
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f8d00bf5057f624e949aef802595da9, type: 3}
---- !u!1 &2742661310028482092 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7911227102036420802, guid: c70b5f0d8ee2baf4d88eeda1383b41d3, type: 3}
-  m_PrefabInstance: {fileID: 5459964515106320110}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5459964515106320110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -633,10 +636,6 @@ PrefabInstance:
     - target: {fileID: 7911227102036420802, guid: c70b5f0d8ee2baf4d88eeda1383b41d3, type: 3}
       propertyPath: m_Name
       value: Obstacles
-      objectReference: {fileID: 0}
-    - target: {fileID: 7911227102036420802, guid: c70b5f0d8ee2baf4d88eeda1383b41d3, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 7911227102036640994, guid: c70b5f0d8ee2baf4d88eeda1383b41d3, type: 3}
       propertyPath: m_RootOrder
