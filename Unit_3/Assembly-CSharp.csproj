@@ -56,14 +56,19 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\MoveLeft.cs" />
-    <Compile Include="Assets\Scripts\SpawnManager.cs" />
-    <Compile Include="Assets\Scripts\RepeatBackground.cs" />
+    <Compile Include="Assets\Prototype 3\Scripts\MoveLeft.cs" />
+    <Compile Include="Assets\Prototype 3\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Prototype 3\Scripts\SpawnManager.cs" />
+    <Compile Include="Assets\Prototype 3\Scripts\RepeatBackground.cs" />
+    <Compile Include="Assets\Challenge 3\_Source_Files\SpinObjectsX.cs" />
+    <Compile Include="Assets\Challenge 3\Scripts\RepeatBackgroundX.cs" />
+    <Compile Include="Assets\Challenge 3\Scripts\MoveLeftX.cs" />
+    <Compile Include="Assets\Challenge 3\Scripts\SpawnManagerX.cs" />
+    <Compile Include="Assets\Challenge 3\Scripts\PlayerControllerX.cs" />
   </ItemGroup>
   <ItemGroup>
-     <None Include="Assets\Course Library\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
-     <None Include="Assets\Course Library\_Source_Files\_LICENSE.txt" />
+     <None Include="Assets\Prototype 3\Course Library\_Source_Files\Materials\UnlitVertexColour_Alpha.shader" />
+     <None Include="Assets\Prototype 3\Course Library\_Source_Files\_LICENSE.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
