@@ -47,11 +47,10 @@ public class PlayerController : MonoBehaviour
         applySpeed = walkSpeed;
         myRigid = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        originPosY = theCamera.transform.position.y;
+        originPosY = theCamera.transform.position.y - 1;
         applyCrouchPosY = originPosY;
     }
 
-    // Update is called once per frame
     void Update()
     {
         IsGround();
@@ -79,8 +78,7 @@ public class PlayerController : MonoBehaviour
                 break;
             yield return null; // 한 프레임 대기
         }
-        theCamera.transform.localPosition = new Vector3(0, applyCrouchPosY, 0f);    
-    }
+        theCamera.transform.localPosition = new Vector3(0, applyCrouchPosY, 0f);    }
 
     //앉기 시도
     void TryCrouch()
