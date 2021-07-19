@@ -27,6 +27,9 @@ ModelImporter:
   - first:
       74: 7276754366007499447
     second: Gun0_Item
+  - first:
+      74: -2462313345951890581
+    second: Gun0_FineSightMode
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -172,7 +175,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Gun0_fineSightMode
+      name: Gun0_FineSightMode
       takeName: Armature|ArmatureAction
       internalID: 0
       firstFrame: 180

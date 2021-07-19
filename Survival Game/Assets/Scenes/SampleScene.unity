@@ -963,6 +963,10 @@ PrefabInstance:
       value: SubMachineGun1
       objectReference: {fileID: 0}
     - target: {fileID: 762759541830859796, guid: f6d7792e1d1ca3d47bda626a784444cb, type: 3}
+      propertyPath: damage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 762759541830859796, guid: f6d7792e1d1ca3d47bda626a784444cb, type: 3}
       propertyPath: fire_Sound
       value: 
       objectReference: {fileID: 8300000, guid: 89cba44167118fd4d840ef557f48c874, type: 3}
@@ -970,6 +974,18 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 1080803904}
+    - target: {fileID: 762759541830859796, guid: f6d7792e1d1ca3d47bda626a784444cb, type: 3}
+      propertyPath: carryBulletCount
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 762759541830859796, guid: f6d7792e1d1ca3d47bda626a784444cb, type: 3}
+      propertyPath: reloadBulletCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 762759541830859796, guid: f6d7792e1d1ca3d47bda626a784444cb, type: 3}
+      propertyPath: currentBulletCount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 784535085205844738, guid: f6d7792e1d1ca3d47bda626a784444cb, type: 3}
       propertyPath: m_RootOrder
       value: 0
