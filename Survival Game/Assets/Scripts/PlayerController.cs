@@ -39,8 +39,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Camera theCamera;
-
     private Rigidbody myRigid;
+    private GunController theGunController;
+    
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider>();
         originPosY = theCamera.transform.position.y - 1;
         applyCrouchPosY = originPosY;
+        theGunController = FindObjectOfType<GunController>();
     }
 
     void Update()
@@ -142,6 +144,9 @@ public class PlayerController : MonoBehaviour
     {
         if(isCrouch)
             Crouch();
+
+        theGunController.CancelFineSight();
+
         isRun = true;
         applySpeed = runSpeed;
     }
