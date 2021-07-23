@@ -263,6 +263,8 @@ GameObject:
   - component: {fileID: 576936718}
   - component: {fileID: 576936717}
   - component: {fileID: 576936719}
+  - component: {fileID: 576936720}
+  - component: {fileID: 576936721}
   m_Layer: 2
   m_Name: Holder
   m_TagString: Untagged
@@ -299,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGun: {fileID: 5376853145402691375}
+  isFineSightMode: 0
   originPos: {x: 0, y: 0, z: 0}
   theCam: {fileID: 963194227}
   hit_effect_prefab: {fileID: 8014016522856914753, guid: be1bc70c718156642ac411703585611a, type: 3}
@@ -411,6 +414,43 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &576936720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576936715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ceb69861193844b8182e771019bbd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changeWeaponDelayTime: 0.1
+  changeWeaponEndDelayTime: 0.1
+  guns:
+  - {fileID: 5376853145402691375}
+  hands:
+  - {fileID: 1709438966}
+  currentWeaponType: GUN
+  theGunController: {fileID: 576936717}
+  theHandController: {fileID: 576936718}
+--- !u!114 &576936721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576936715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a379d14c00c4f794abcebf0068601220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  limitPos: {x: 0.3, y: 0.1, z: 0}
+  fineSightLimitPos: {x: 0.1, y: 0.05, z: 0}
+  smoothSway: {x: 0.05, y: 0.05, z: 0}
+  theGunController: {fileID: 576936717}
 --- !u!1 &607980519
 GameObject:
   m_ObjectHideFlags: 0
