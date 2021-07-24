@@ -43,8 +43,8 @@ public class GunController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         theCrosshair = FindObjectOfType<Crosshair>();
 
-        /*WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
-        WeaponManager.currentWeaponAnim = currentGun.anim;*/
+        WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
+        WeaponManager.currentWeaponAnim = currentGun.anim;
     }
 
     private void Update()
