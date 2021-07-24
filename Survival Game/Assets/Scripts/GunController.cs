@@ -6,7 +6,7 @@ public class GunController : MonoBehaviour
 {
 
     //활성화 여부
-    public static bool isActivate = true;
+    public static bool isActivate = false;
 
     [SerializeField]
     private Gun currentGun;
@@ -33,14 +33,18 @@ public class GunController : MonoBehaviour
     [SerializeField]
     private GameObject hit_effect_prefab;
 
+    [SerializeField]
+    private GameObject player;
+
     private void Start()
     {
-        originPos = Vector3.zero;
+        originPos = transform.position;
+        Debug.Log(originPos);
         audioSource = GetComponent<AudioSource>();
         theCrosshair = FindObjectOfType<Crosshair>();
 
-        WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
-        WeaponManager.currentWeaponAnim = currentGun.anim;
+        /*WeaponManager.currentWeapon = currentGun.GetComponent<Transform>();
+        WeaponManager.currentWeaponAnim = currentGun.anim;*/
     }
 
     private void Update()
@@ -220,7 +224,7 @@ public class GunController : MonoBehaviour
     IEnumerator RetroActionCoroutine()
     {
         //정조준 안 했을 때 반동
-        Vector3 recoilBack = new Vector3(currentGun.retroActionForce,originPos.y, originPos.z);
+        Vector3 recoilBack = new Vector3(currentGun.retroActionForce, originPos.y, originPos.z);
         //정조준 했을 때 반동
         Vector3 retroActionRecoilBack = new Vector3(currentGun.retroActionFineSightForce, currentGun.fineSightOriginPos.y, currentGun.fineSightOriginPos.z);
         

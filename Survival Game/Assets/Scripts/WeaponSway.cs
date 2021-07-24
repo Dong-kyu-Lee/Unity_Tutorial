@@ -25,7 +25,7 @@ public class WeaponSway : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        originPos  = transform.localPosition;
+        originPos  = this.transform.position;
     }
 
     // Update is called once per frame

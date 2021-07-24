@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         applySpeed = walkSpeed;
         myRigid = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        originPosY = theCamera.transform.position.y - 1;
+        originPosY = theCamera.transform.position.y;
         applyCrouchPosY = originPosY;
         theGunController = FindObjectOfType<GunController>();
         theCrosshair = FindObjectOfType<Crosshair>();
@@ -126,7 +126,6 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         myRigid.velocity = transform.up * jumpForce;
-        Crouch();
     }
 
     void IsGround()
