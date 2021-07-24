@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody myRigid;
     private GunController theGunController;
     private Crosshair theCrosshair;
+    private StatusController theStatusController;
     
 
     void Start()
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
         applyCrouchPosY = originPosY;
         theGunController = FindObjectOfType<GunController>();
         theCrosshair = FindObjectOfType<Crosshair>();
+        theStatusController = FindObjectOfType<StatusController>();
     }
 
     void Update()
@@ -125,6 +127,9 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        if (isCrouch)
+            Crouch();
+        theStatusController.DecreaseStamina(100);
         myRigid.velocity = transform.up * jumpForce;
     }
 
@@ -156,6 +161,7 @@ public class PlayerController : MonoBehaviour
 
         isRun = true;
         theCrosshair.RunningAnimation(isRun);
+        theStatusController.DecreaseStamina(10);
         applySpeed = runSpeed;
     }
 
