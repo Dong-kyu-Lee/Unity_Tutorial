@@ -6,7 +6,8 @@ using UnityEngine.EventSystems;
 
 
 public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
-                                   IDragHandler,IEndDragHandler, IDropHandler
+                                   IDragHandler,IEndDragHandler, IDropHandler,
+                                   IPointerEnterHandler, IPointerExitHandler
 {
 
     public Item item; //획득한 아이템
@@ -133,5 +134,18 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
             DragSlot.instance.dragSlot.AddItem(_tempItem, _tempItemCount);
         else
             DragSlot.instance.dragSlot.ClearSlot();
+    }
+
+    //마우스가 슬롯에 들어갈 때 발동
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(item != null)
+            itemEffectDataBase.ShowToolTip(item, transform.position);
+    }
+
+    //슬롯에서 빠져나갈 때 발동
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        itemEffectDataBase.HideToolTip();
     }
 }
