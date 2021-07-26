@@ -84,7 +84,7 @@ public class WeaponManager : MonoBehaviour
     public IEnumerator ChangeWeaponCoroutine(string _type, string _name)
     {
         isChangeWeapon = true;
-        currentWeaponAnim.SetTrigger("Weapon_Out");
+        currentWeaponAnim.SetTrigger("Weapon_Out"); 
 
         yield return new WaitForSeconds(changeWeaponEndDelayTime);
 
