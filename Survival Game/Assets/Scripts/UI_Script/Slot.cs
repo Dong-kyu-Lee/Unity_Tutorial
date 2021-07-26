@@ -18,12 +18,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
     private Text text_Count;
     [SerializeField]
     private GameObject go_CountImage;
+    private ItemEffectDataBase itemEffectDataBase;
 
-    private WeaponManager theWeaponManager;
 
     void Start()
     {
-        theWeaponManager = FindObjectOfType<WeaponManager>();
+        itemEffectDataBase = FindObjectOfType<ItemEffectDataBase>();
     }
 
     void SetColor(float alpha)
@@ -78,17 +78,12 @@ public class Slot : MonoBehaviour, IPointerClickHandler, IBeginDragHandler,
         //이 스크립트가 적용된 객체에 우클릭을 하면 함수가 실행됨
         if(eventData.button == PointerEventData.InputButton.Right)
         {
-            if(item != null)
+            if (item != null)
             {
-                if (item.itemType == Item.ItemType.Equipment)
+                //소모
+                itemEffectDataBase.UseItem(item);
+                if (item.itemType == Item.ItemType.Used)
                 {
-                    //장착
-                    StartCoroutine(theWeaponManager.ChangeWeaponCoroutine(item.weaponType, item.itemName));
-                }
-                else
-                {
-                    //소모
-                    Debug.Log(item.itemName + " 을 사용했습니다");
                     SetSlotCount(-1);
                 }
             }
