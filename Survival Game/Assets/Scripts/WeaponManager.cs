@@ -19,11 +19,8 @@ public class WeaponManager : MonoBehaviour
     private Gun[] guns;
     [SerializeField]
     private CloseWeapon[] hands;
-
     [SerializeField]
     private CloseWeapon[] axes;
-    [SerializeField]
-    private AxeController theAxeController;
 
     private Dictionary<string, Gun> gunDictionary = new Dictionary<string, Gun>();
     private Dictionary<string, CloseWeapon> handDictionary = new Dictionary<string, CloseWeapon>();
@@ -38,12 +35,11 @@ public class WeaponManager : MonoBehaviour
     private GunController theGunController;
     [SerializeField]
     private HandController theHandController;
-    
+    [SerializeField]
+    private AxeController theAxeController;
 
     void Start()
     {
-        //gunDictionary.Add("AK47", guns[0]);
-        //gunDictionary["AK47"];
         for (int i = 0; i < guns.Length; i++)
         {
             gunDictionary.Add(guns[i].gunName, guns[i]);

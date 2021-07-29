@@ -41,7 +41,7 @@ public abstract class CloseWeaponController : MonoBehaviour
         isSwing = true;
 
         //공격 활성화 시점
-
+        StartCoroutine(HitCoroutine());
 
 
         yield return new WaitForSeconds(currentCloseWeapon.attackDelayB);
