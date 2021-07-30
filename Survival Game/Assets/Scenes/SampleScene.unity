@@ -1291,6 +1291,9 @@ MonoBehaviour:
   currentGun: {fileID: 5376853145402691375}
   isFineSightMode: 0
   originPos: {x: 0, y: 0, z: 0}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 243
   theCam: {fileID: 963194227}
   hit_effect_prefab: {fileID: 8014016522856914753, guid: be1bc70c718156642ac411703585611a, type: 3}
   player: {fileID: 2109851248}
@@ -1307,6 +1310,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCloseWeapon: {fileID: 1709438966}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 243
 --- !u!82 &576936719
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1456,6 +1462,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCloseWeapon: {fileID: 1278881625}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 243
 --- !u!1001 &586307123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5279,6 +5288,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789988884}
   m_CullTransparentMesh: 1
+--- !u!1 &1828058047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4649654354365747130, guid: b4dae3055caa95c46ba3f7b2a6c34202, type: 3}
+  m_PrefabInstance: {fileID: 500457339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1832569103
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,7 +5486,7 @@ GameObject:
   - component: {fileID: 1849569395}
   m_Layer: 0
   m_Name: Pig
-  m_TagString: NPC
+  m_TagString: WeakAnimal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5499,12 +5513,12 @@ MonoBehaviour:
   anim: {fileID: 266917797}
   rigid: {fileID: 1849569392}
   boxCol: {fileID: 1849569391}
-  sound_pig_Normal:
+  sound_Normal:
   - {fileID: 8300000, guid: 39f960b0bc0517e4998239c83efa30ea, type: 3}
   - {fileID: 8300000, guid: c06589f2ba8727544aa70f993e027440, type: 3}
   - {fileID: 8300000, guid: f913a854f59f19748b7df3d8868708a1, type: 3}
-  sound_pig_Hurt: {fileID: 8300000, guid: c2353f44db716204fb22b767f958fb7b, type: 3}
-  sound_pig_Dead: {fileID: 8300000, guid: 667b50e773fb2304f89c1abca7310883, type: 3}
+  sound_Hurt: {fileID: 8300000, guid: c2353f44db716204fb22b767f958fb7b, type: 3}
+  sound_Dead: {fileID: 8300000, guid: 667b50e773fb2304f89c1abca7310883, type: 3}
 --- !u!65 &1849569391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7366,7 +7380,7 @@ PrefabInstance:
     - target: {fileID: 6010222872712236381, guid: cc62f70b221899d4f814a2c1fc7ab46d, type: 3}
       propertyPath: go_rock_item_Prefab
       value: 
-      objectReference: {fileID: 4649654354365747130, guid: b4dae3055caa95c46ba3f7b2a6c34202, type: 3}
+      objectReference: {fileID: 1828058047}
     - target: {fileID: 6424437829429928545, guid: cc62f70b221899d4f814a2c1fc7ab46d, type: 3}
       propertyPath: m_Layer
       value: 7
