@@ -5,14 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static bool canPlayerMove = true; //플레이어의 움직임 제어
-
     public static bool isOpenInventory = false;
-
     public static bool isOpenCraftManual = false;
 
     public static bool isNight = false;
-
     public static bool isWater = false;
+
+    public static bool isPause = false; //메뉴가 호출되면 true
 
     private bool flag = false;
 
@@ -20,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (isOpenInventory || isOpenCraftManual)
+        if (isOpenInventory || isOpenCraftManual || isPause)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
