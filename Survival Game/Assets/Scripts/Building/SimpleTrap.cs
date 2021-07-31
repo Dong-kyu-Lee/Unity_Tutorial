@@ -38,7 +38,7 @@ public class SimpleTrap : MonoBehaviour
                     rigid[i].isKinematic = false;
                 }
 
-                if(other.transform.name == "Player")
+                if(other.transform.tag == "Player")
                 {
                     other.transform.GetComponent<StatusController>().DecreaseHP(damage);
                 }
