@@ -6,8 +6,6 @@ public class Sun : MonoBehaviour
 {
     [SerializeField] private float secondPerRealTimeSecond;
 
-    private bool isNight = false;
-
     [SerializeField] private float fogDensityCalc;
 
     [SerializeField] private float nightFogDensity;
@@ -24,11 +22,11 @@ public class Sun : MonoBehaviour
         transform.Rotate(Vector3.right, 0.1f * secondPerRealTimeSecond * Time.deltaTime);
 
         if (transform.eulerAngles.x >= 170)
-            isNight = true;
+            GameManager.isNight = true;
         else if (transform.eulerAngles.x <= 10)
-            isNight = false;
+            GameManager.isNight = false;
 
-        if(isNight)
+        if(GameManager.isNight)
         {
             if (currentFogDensity <= nightFogDensity)
             {
