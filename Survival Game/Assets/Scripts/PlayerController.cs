@@ -6,13 +6,17 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float walkSpeed;
-
     [SerializeField]
     private float runSpeed;
     private float applySpeed;
-
     [SerializeField]
     private float crouchSpeed;
+    [SerializeField]
+    private float swimSpeed;
+    [SerializeField]
+    private float swimFastSpeed;
+    [SerializeField]
+    private float upSwimSpeed;
 
     [SerializeField]
     private float jumpForce;
@@ -64,14 +68,26 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.canPlayerMove)
         {
+            WaterCheck();
             IsGround();
             TryJump();
-            TryRun();
+            if(!GameManager.isWater)
+                TryRun();
             TryCrouch();
             Move();
             MoveCheck();
             CameraRotation();
             CharacterRotation();
+        }
+    }
+
+    void WaterCheck()
+    {
+        if (GameManager.isWater)
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+                applySpeed = swimFastSpeed;
+            else applySpeed = swimSpeed;
         }
     }
 
@@ -126,7 +142,17 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        else if (Input.GetKey(KeyCode.Space) && GameManager.isWater)
+        {
+            UpSwim();
+        }
     }
+
+    void UpSwim()
+    {
+        myRigid.velocity = transform.up * upSwimSpeed;
+    }
+
 
     void Jump()
     {
@@ -143,7 +169,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Run or Walk define
-    private void TryRun()
+    void TryRun()
     {
         if(Input.GetKey(KeyCode.LeftShift) && theStatusController.GetCurrentSP() > 0)
         {
@@ -175,7 +201,7 @@ public class PlayerController : MonoBehaviour
         applySpeed = walkSpeed;
     }
 
-    private void Move()
+    void Move()
     {
         float _moveDirX = Input.GetAxisRaw("Horizontal");
         float _moveDirZ = Input.GetAxisRaw("Vertical");
@@ -186,7 +212,7 @@ public class PlayerController : MonoBehaviour
         myRigid.MovePosition(transform.position + _velocity * Time.deltaTime);
     }
 
-    private void MoveCheck()
+    void MoveCheck()
     {
         if (!isRun && !isCrouch && isGround)
         {
@@ -202,7 +228,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void CameraRotation()
+    void CameraRotation()
     {
         //상하 카메라 회전
         float _xRotation = Input.GetAxisRaw("Mouse Y");
@@ -213,7 +239,7 @@ public class PlayerController : MonoBehaviour
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
     }
 
-    private void CharacterRotation()
+    void CharacterRotation()
     {
         //좌우 캐릭터 회전
         float _yRotation = Input.GetAxisRaw("Mouse X");

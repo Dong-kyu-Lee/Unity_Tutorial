@@ -13,7 +13,11 @@ public class GameManager : MonoBehaviour
     public static bool isNight = false;
 
     public static bool isWater = false;
-    
+
+    private bool flag = false;
+
+    private WeaponManager theWM;
+
     void Update()
     {
         if (isOpenInventory || isOpenCraftManual)
@@ -28,11 +32,32 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
             canPlayerMove = true;
         }
+
+        if (isWater)
+        {
+            if (!flag)
+            {
+                StopAllCoroutines();
+                StartCoroutine(theWM.WeaponInCoroutine());
+                flag = true;
+            }
+        }
+        else
+        {
+            if (flag)
+            {
+                theWM.WeaponOut();
+                flag = false;
+            }
+        }
+            
+        
     }
 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        theWM = FindObjectOfType<WeaponManager>();
     }
 }
